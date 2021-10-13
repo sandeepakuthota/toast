@@ -14,6 +14,12 @@ class LogMessage {
             Log.i(tag, message.toString())
 
 
+
+
+
+
+
+
         }
     }
 }
