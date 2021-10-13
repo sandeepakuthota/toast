@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
        // "javatpoint"
         //ToasterActivity.toastmessage(this,"this is sdk testing example")
-        ToasterActivity.toastmessage(this,"this is sdk testing example")
+        //ToasterActivity.toastmessage(this,"this is sdk testing example")
     }
 }
 
