@@ -8,6 +8,26 @@
             <set />
           </value>
         </entry>
+        <entry key="1c397296:F\:/ProjectResources/SdkExamples/SampleSdkChecking:F\:/ProjectResources/SdkExamples/SampleSdkChecking/.idea/deploymentTargetDropDown.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="1c397296:F\:/ProjectResources/SdkExamples/SampleSdkChecking:F\:/ProjectResources/SdkExamples/SampleSdkChecking/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="1c397296:F\:/ProjectResources/SdkExamples/SampleSdkChecking:F\:/ProjectResources/SdkExamples/SampleSdkChecking/logmessage/src/main/java/com/logmessage/LogMessage.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="1c397296:F\:/ProjectResources/SdkExamples/SampleSdkChecking:F\:/ProjectResources/SdkExamples/SampleSdkChecking/myapplication/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/.idea/sonarIssues.xml">
           <value>
             <set />
@@ -24,6 +44,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/logmessage/build.gradle">
           <value>
             <set />
           </value>
