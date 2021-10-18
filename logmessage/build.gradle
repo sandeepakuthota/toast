@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'maven-publish'
 }
 
 android {
@@ -40,3 +41,44 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.example' //You can either define these here or get them from project conf elsewhere
+            artifactId 'example'
+            version '0.0.1-SNAPSHOT'
+            //artifact "$buildDir/outputs/aar/app-release.aar" //aar artifact you want to publish
+            //artifact(sourceJar)
+           // artifact("$buildDir/outputs/aar/bar-release.aar")
+            //generate pom nodes for dependencies
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.compile.allDependencies.each { dependency ->
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', dependency.group)
+                    dependencyNode.appendNode('artifactId', dependency.name)
+                    dependencyNode.appendNode('version', dependency.version)
+                }
+            }
+        }
+    }
+
+    //publish to filesystem repo
+    repositories{
+        maven {
+            url "$buildDir/repo"
+        }
+    }
+}
+/*artifacts {
+    archives file(getArtifactId() + ".aar")
+    archives sourcesJar
+}*/
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
+}
+
+//apply(from = "../publish_local.gradle")

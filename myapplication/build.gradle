@@ -4,6 +4,7 @@ plugins {
    // id 'com.github.dcendents.android-maven'
    // id 'maven'
   //  id '$rootDir/gradle-mvn-push.gradle'
+    id 'maven-publish'
 }
 
 android {
@@ -35,7 +36,7 @@ android {
         jvmTarget = '1.8'
     }
     compileSdkVersion 31
-    buildToolsVersion '31.0.0'
+    buildToolsVersion '30.0.0'
 
  /*   publishNonDefault true
     debugCompile project(path: ':myapplication', configuration: 'debug')
@@ -52,4 +53,44 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
    // implementation 'com.github.User:Repo:Version'
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.example' //You can either define these here or get them from project conf elsewhere
+            artifactId 'example'
+            version '0.0.1-SNAPSHOT'
+           // artifact "$buildDir/outputs/aar/app-release.aar" //aar artifact you want to publish
+            //artifact(sourceJar)
+            //artifact("$buildDir/outputs/aar/bar-release.aar")
+
+            //generate pom nodes for dependencies
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.compile.allDependencies.each { dependency ->
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', dependency.group)
+                    dependencyNode.appendNode('artifactId', dependency.name)
+                    dependencyNode.appendNode('version', dependency.version)
+                }
+            }
+        }
+    }
+
+    //publish to filesystem repo
+    repositories{
+        maven {
+            url "$buildDir/repo"
+        }
+    }
+}
+/*
+artifacts {
+    archives file(getArtifactId() + ".aar")
+    archives sourcesJar
+}*/
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
 }
