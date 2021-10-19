@@ -55,13 +55,34 @@ dependencies {
    // implementation 'com.github.User:Repo:Version'
 }
 
+ext {
+    pomVersion = '1.0.0'
+    pomGroupID = "com.sdkchecking.message"
+}
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId 'com.example' //You can either define these here or get them from project conf elsewhere
+          /*  groupId 'com.example' //You can either define these here or get them from project conf elsewhere
             artifactId 'example'
-            version '0.0.1-SNAPSHOT'
-           // artifact "$buildDir/outputs/aar/app-release.aar" //aar artifact you want to publish
+            version '0.0.1-SNAPSHOT'*/
+            if (project.hasProperty("android")) {
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
+                    builtBy(tasks.getByPath("assemble"))
+                }
+            } else {
+                from(components["java"])
+            }
+
+
+            groupId project.ext.pomGroupID
+            artifactId project.name
+            version project.ext.pomVersion
+            ///artifact "$buildDir/app-release.aar"
+            // artifact(bundleReleaseAar)
+
+            // artifact bundleReleaseAar
+
+           //artifact "$buildDir/outputs/aar/app-release.aar" //aar artifact you want to publish
             //artifact(sourceJar)
             //artifact("$buildDir/outputs/aar/bar-release.aar")
 

@@ -27,6 +27,11 @@ buildscript {
 plugins {
     id 'maven-publish'
 }
+
+ext {
+    pomVersion = '1.0.0'
+    pomGroupID = "com.sdkchecking.message"
+}
 /*
 allprojects {
     repositories {
