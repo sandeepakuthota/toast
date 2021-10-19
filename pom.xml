@@ -6,12 +6,12 @@
     <groupId>com.sdkchecking.message</groupId>
     <artifactId>logmessage</artifactId>
     <version>1.0.0</version>
-    <packaging>pom</packaging>
+    <!--<packaging>pom</packaging>-->
 <distributionManagement>
     <repository>
         <id>github</id>
-        <name>GitHub OWNER Apache Maven Packages</name>
-        <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+        <name>Sandeep Akuthota</name>
+        <url>https://github.com/sandeepakuthota/toast/tree/master</url>
     </repository>
 </distributionManagement>
 </project>
