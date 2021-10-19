@@ -11,7 +11,7 @@
     <repository>
         <id>github</id>
         <name>Sandeep Akuthota</name>
-        <url>https://github.com/sandeepakuthota/toast/tree/master</url>
+        <url>https://github.com/sandeepakuthota/toast</url>
     </repository>
 </distributionManagement>
 </project>
