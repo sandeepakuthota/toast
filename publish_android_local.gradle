@@ -1,0 +1,28 @@
+apply plugin: 'maven-publish'
+
+// Publish to local maven repo
+project.afterEvaluate {
+  publishing {
+    publications {
+      mavenLocal(MavenPublication) {
+        if (project.hasProperty("android")) {
+          artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
+            builtBy(tasks.getByPath("assemble"))
+          }
+        } else {
+          from(components["java"])
+        }
+
+        groupId = project.group
+        artifactId = project.name
+        version = project.version
+
+        pom {
+          setProperty("groupId", groupId)
+          setProperty("artifactId", artifactId)
+          setProperty("version", version)
+        }
+      }
+    }
+  }
+}
