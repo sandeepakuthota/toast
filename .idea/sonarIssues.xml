@@ -23,6 +23,11 @@
             <set />
           </value>
         </entry>
+        <entry key="1c397296:F\:/ProjectResources/SdkExamples/SampleSdkChecking:F\:/ProjectResources/SdkExamples/SampleSdkChecking/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="1c397296:F\:/ProjectResources/SdkExamples/SampleSdkChecking:F\:/ProjectResources/SdkExamples/SampleSdkChecking/gradle.properties">
           <value>
             <set />
@@ -99,6 +104,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/myapplication/src/main/java/com/toastmessage/ToastMessage.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/pom.xml">
           <value>
             <set />
           </value>
