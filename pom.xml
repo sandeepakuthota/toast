@@ -1,0 +1,12 @@
+<distributionManagement>
+   <repository>
+     <id>github</id>
+     <name>GitHub OWNER Apache Maven Packages</name>
+     <url>https://maven.pkg.github.com/OWNER/REPOSITORY</url>
+   </repository>
+    <dependency>
+        <groupId><yourGroupID></groupId>
+        <artifactId><yourArtifactId></artifactId>
+        <version><yourVersion></version>
+    </dependency>
+</distributionManagement>
