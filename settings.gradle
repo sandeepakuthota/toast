@@ -10,3 +10,4 @@ rootProject.name = "SampleSdkChecking"
 include ':app'
 include ':myapplication'
 include ':logmessage'
+include ':remote'
