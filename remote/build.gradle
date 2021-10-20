@@ -31,12 +31,85 @@ android {
     }
 }
 
+
+
 dependencies {
 
     implementation 'androidx.core:core-ktx:1.6.0'
     implementation 'androidx.appcompat:appcompat:1.3.1'
     implementation 'com.google.android.material:material:1.4.0'
+   // implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+   // implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.7.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+
+}
+
+ext {
+    pomVersion = '1.0.0'
+    pomGroupID = "com.sdkchecking.message"
+}
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            /*groupId 'com.example' //You can either define these here or get them from project conf elsewhere
+            artifactId 'example'
+            version '0.0.1-SNAPSHOT'*/
+
+
+            if (project.hasProperty("android")) {
+                artifact("$buildDir/outputs/aar/${project.name}-release.aar") {
+                    builtBy(tasks.getByPath("assemble"))
+                }
+            } else {
+                from(components["java"])
+            }
+
+            groupId project.ext.pomGroupID
+            artifactId project.name
+            version project.ext.pomVersion
+            //artifact "$buildDir/app-release.aar"
+            // artifact(bundleReleaseAar)
+
+            // artifact bundleReleaseAar
+
+            // artifact "$buildDir/outputs/aar/app-release.aar" //aar artifact you want to publish
+            //artifact(sourceJar)
+            // artifact("$buildDir/outputs/aar/bar-release.aar")
+            //generate pom nodes for dependencies
+            pom.withXml {
+                def dependenciesNode = asNode().appendNode('dependencies')
+                configurations.compile.allDependencies.each { dependency ->
+                    def dependencyNode = dependenciesNode.appendNode('dependency')
+                    dependencyNode.appendNode('groupId', dependency.group)
+                    dependencyNode.appendNode('artifactId', dependency.name)
+                    dependencyNode.appendNode('version', dependency.version)
+                }
+            }
+        }
+    }
+
+    //publish to filesystem repo
+    repositories{
+        maven {
+            url "$buildDir/repo"
+        }
+    }
+}
+/*artifacts {
+    archives file(getArtifactId() + ".aar")
+    archives sourcesJar
+}*/
+
+task sourceJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier "sources"
 }

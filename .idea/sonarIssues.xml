@@ -43,7 +43,22 @@
             <set />
           </value>
         </entry>
+        <entry key="46f85d6a:F\:/ProjectResources/SdkExamples/NspireTask:F\:/ProjectResources/SdkExamples/NspireTask/.idea/gradle.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="46f85d6a:F\:/ProjectResources/SdkExamples/NspireTask:F\:/ProjectResources/SdkExamples/NspireTask/.idea/sonarIssues.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../InfogenSdk/infogen-android-sdk/sdkinterface/build.gradle.kts">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../NspireTask/.idea/sonarIssues.xml">
           <value>
             <set />
           </value>
@@ -59,6 +74,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/publish_local.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/java/com/samplesdkchecking/APIRetirofit.kt">
           <value>
             <set />
           </value>
@@ -113,12 +133,42 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/remote/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/remote/src/main/AndroidManifest.xml">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/remote/src/main/java/com/remote/APIRetirofit.java">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/remote/src/main/java/com/remote/APIRetirofit.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/remote/src/main/java/com/remote/Movie.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/settings.gradle">
           <value>
             <set />
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../SdkProject/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SdkProject/app/src/main/java/com/sdkproject/APIRetirofit.kt">
           <value>
             <set />
           </value>
