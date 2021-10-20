@@ -4,21 +4,37 @@ import retrofit2.Call
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
+import okhttp3.Protocol
+import java.net.CookieManager
+import java.net.CookiePolicy
+import java.util.*
+import java.nio.file.attribute.AclEntry.newBuilder
+import okhttp3.OkHttpClient
+
+
+
+
 
 interface APIRetirofit {
 
-    @GET("volley_array.json")
+    @GET("/api/v1/employees")
     fun getMovies() : Call<List<Movie>>
 
+    @GET("/users")
+    fun getusers() : Call<List<User>>
+
+
+
     companion object {
+        //https://dummy.restapiexample.com/api/v1/employees
+        var BASE_URL = "https://dummy.restapiexample.com"
 
-        var BASE_URL = "http://velmm.com/apis/"
-
-    fun create(): APIRetirofit {
-
+    fun create(baseurl:String): APIRetirofit {
+        val okHttpClient = OkHttpClient()
         val retrofit = Retrofit.Builder()
+            .baseUrl(baseurl)
+            .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(BASE_URL)
             .build()
         return retrofit.create(APIRetirofit::class.java)
 
@@ -30,5 +46,26 @@ interface APIRetirofit {
         val service = retrofit.create(WeatherService::class.java)*/
     }
 
+        /*fun provideOkHttpClient(): OkHttpClient {
+
+            *//*val cookieManager = CookieManager()
+            cookieManager.setCookiePolicy(CookiePolicy.ACCEPT_ALL)
+
+            val client = OkHttpClient.Builder()
+                .cookieJar(JavaNetCookieJar(cookieManager))
+                .addNetworkInterceptor(provideRequestInterceptor())
+                .addNetworkInterceptor(provideLoggingInterceptor())
+                .protocols(Arrays.asList(Protocol.HTTP_1_1))
+                .build()
+
+            return client*//*
+          *//*  val baseOkHttpClient = OkHttpClient()
+
+            OkHttpClient okHttpClientV1 = baseOkHttpClient.newBuilder()
+                .followRedirects(false)
+                .build()*//*
+            return okHttpClientV1;
+        }
+*/
 }
 }

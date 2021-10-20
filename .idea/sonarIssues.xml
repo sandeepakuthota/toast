@@ -53,6 +53,11 @@
             <set />
           </value>
         </entry>
+        <entry key="$USER_HOME$/.gradle/caches/transforms-3/0bff2986e65de56a04c9cd771e302ac0/transformed/jetified-remote-1.0.0/jars/classes.jar!/com/remote/APIRetirofit.class">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/../../InfogenSdk/infogen-android-sdk/sdkinterface/build.gradle.kts">
           <value>
             <set />
@@ -74,6 +79,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/app/publish_local.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <value>
             <set />
           </value>
@@ -153,7 +163,17 @@
             <set />
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/remote/src/main/java/com/remote/DataModel.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/remote/src/main/java/com/remote/Movie.kt">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/remote/src/main/java/com/remote/User.kt">
           <value>
             <set />
           </value>
@@ -164,6 +184,11 @@
           </value>
         </entry>
         <entry key="$PROJECT_DIR$/../SdkProject/app/build.gradle">
+          <value>
+            <set />
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/../SdkProject/app/src/main/AndroidManifest.xml">
           <value>
             <set />
           </value>
